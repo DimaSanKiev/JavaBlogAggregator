@@ -2,17 +2,18 @@
   Created by IntelliJ IDEA.
   User: Dima
   Date: 11.06.2015
-  Time: 17:25
+  Time: 18:20
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" %>
 <html>
-  <head>
-    <title>hello title</title>
-  </head>
-  <body>
+<head>
+  <meta http-equiv="Content-Type" content="text/html, charset=UTF-8">
+  <title></title>
+</head>
+<body>
 
-  hello world
+hello from spring web mvc
 
-  </body>
+</body>
 </html>
