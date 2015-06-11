@@ -9,13 +9,35 @@
     <!-- Shared version number properties -->
     <properties>
         <org.springframework.version>4.1.6.RELEASE</org.springframework.version>
+        <apache.tiles>3.0.5</apache.tiles>
     </properties>
 
     <dependencies>
+
+        <dependency>
+            <groupId>org.apache.tiles</groupId>
+            <artifactId>tiles-core</artifactId>
+            <version>${apache.tiles}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.tiles</groupId>
+            <artifactId>tiles-jsp</artifactId>
+            <version>${apache.tiles}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.5.8</version>
+        </dependency>
+
+
         <!--
-    Core utilities used by other modules.
-    Define this if you use Spring Utility APIs (org.springframework.core.*/org.springframework.util.*)
--->
+            Core utilities used by other modules.
+            Define this if you use Spring Utility APIs (org.springframework.core.*/org.springframework.util.*)
+        -->
+
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-core</artifactId>

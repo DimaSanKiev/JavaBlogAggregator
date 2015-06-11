@@ -9,6 +9,6 @@ public class IndexController {
     // String is a location of a view template (jsp file)
     @RequestMapping("/index")
     public String index() {
-        return "/WEB-INF/jsp/index.jsp";
+        return "index";
     }
 }
