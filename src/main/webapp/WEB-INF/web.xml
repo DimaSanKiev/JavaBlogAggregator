@@ -5,13 +5,14 @@
          version="3.1">
     <welcome-file-list>
         <welcome-file>index.html</welcome-file>
-        <!--<welcome-file>index.htm</welcome-file>-->
-        <!--<welcome-file>index.jsp</welcome-file>-->
-        <!--<welcome-file>default.html</welcome-file>-->
-        <!--<welcome-file>default.htm</welcome-file>-->
-        <!--<welcome-file>default.jsp</welcome-file>-->
+        <welcome-file>index.htm</welcome-file>
+        <welcome-file>index.jsp</welcome-file>
+        <welcome-file>default.html</welcome-file>
+        <welcome-file>default.htm</welcome-file>
+        <welcome-file>default.jsp</welcome-file>
     </welcome-file-list>
 
+    <!-- dispatcher servlet creates a spring context where are beans -->
     <servlet>
         <servlet-name>dispatcher</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
@@ -25,5 +26,9 @@
         <url-pattern>*.json</url-pattern>
         <url-pattern>*.xml</url-pattern>
     </servlet-mapping>
+
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
 
 </web-app>
