@@ -1,6 +1,8 @@
 package ua.burdyga.jba.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ua.burdyga.jba.entity.Blog;
@@ -38,7 +40,7 @@ public class UserService {
         List<Blog> blogs = blogRepository.findByUser(user);
         // find all items which belong to some blog
         for (Blog blog : blogs) {
-            List<Item> items = itemRepository.findByBlog(blog);
+            List<Item> items = itemRepository.findByBlog(blog, new PageRequest(0, 10, Sort.Direction.DESC, "publishedDate"));
             blog.setItems(items);
         }
         user.setBlogs(blogs);
