@@ -8,7 +8,7 @@ public class Blog {
 
     @Id
     @GeneratedValue
-    private String id;
+    private Integer id;
 
     private String url;
 
@@ -20,6 +20,7 @@ public class Blog {
 
     @OneToMany(mappedBy = "blog")
     private List<Item> items;
+
 
     public User getUser() {
         return user;
@@ -37,11 +38,11 @@ public class Blog {
         this.items = items;
     }
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

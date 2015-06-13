@@ -23,6 +23,7 @@ public class User {
     @OneToMany(mappedBy = "user")
     private List<Blog> blogs;
 
+
     public List<Blog> getBlogs() {
         return blogs;
     }

@@ -27,6 +27,7 @@ public class Item {
         return blog;
     }
 
+
     public void setBlog(Blog blog) {
         this.blog = blog;
     }
