@@ -11,7 +11,7 @@
     <properties>
         <org.springframework.version>4.1.6.RELEASE</org.springframework.version>
         <apache.tiles>3.0.5</apache.tiles>
-        <spring.security.version>4.0.1.RELEASE</spring.security.version>
+        <spring.security.version>3.2.6.RELEASE</spring.security.version>
     </properties>
 
     <dependencies>

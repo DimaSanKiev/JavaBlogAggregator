@@ -7,12 +7,15 @@
 		   http://www.springframework.org/schema/security
 		   http://www.springframework.org/schema/security/spring-security.xsd">
 
+    <global-method-security pre-post-annotations="enabled"/>
+
     <http>
-        <intercept-url pattern="/users**" access="hasRole('ROLE_ADMIN')"/>
-        <intercept-url pattern="/users/**" access="hasRole('ROLE_ADMIN')"/>
-        <form-login/>
+        <intercept-url pattern="/users**" access="ROLE_ADMIN"/>
+        <intercept-url pattern="/users/**" access="ROLE_ADMIN"/>
+        <form-login login-page="/login.html"/>
         <logout/>
     </http>
+
 
     <authentication-manager>
         <authentication-provider>
