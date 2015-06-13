@@ -20,7 +20,8 @@
     <jpa:repositories base-package="ua.burdyga.jba.repository" entity-manager-factory-ref="emf"
                       transaction-manager-ref="transactionManager"/>
 
-    <bean id="emf" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+    <bean class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"
+          id="emf">
         <property name="packagesToScan" value="ua.burdyga.jba.entity"/>
         <property name="dataSource" ref="dataSource"/>
         <property name="jpaProperties">
