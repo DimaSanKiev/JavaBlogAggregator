@@ -17,7 +17,7 @@
 
     <jdbc:embedded-database type="HSQL" id="dataSource"/>
 
-    <bean class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean" id="emf">
+    <bean id="emf" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
         <property name="packagesToScan" value="ua.burdyga.jba.entity"/>
         <property name="dataSource" ref="dataSource"/>
         <property name="jpaProperties">
@@ -30,13 +30,13 @@
             <bean class="org.hibernate.jpa.HibernatePersistenceProvider"/>
         </property>
     </bean>
+    <tx:annotation-driven transaction-manager="transactionManager"/>
 
-    <tx:annotation-driven transaction-manager="jpaTransactionManager"/>
-
-    <bean class="org.springframework.orm.jpa.JpaTransactionManager" id="jpaTransactionManager">
+    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
         <property name="dataSource" ref="dataSource"/>
     </bean>
 
-    <jpa:repositories base-package="ua.burdyga.jba.repository"/>
+    <jpa:repositories base-package="ua.burdyga.jba.repository" entity-manager-factory-ref="emf"
+                      transaction-manager-ref="transactionManager"/>
 
 </beans>
