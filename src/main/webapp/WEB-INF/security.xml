@@ -9,9 +9,9 @@
 
     <global-method-security pre-post-annotations="enabled"/>
 
-    <http>
-        <intercept-url pattern="/users**" access="ROLE_ADMIN"/>
-        <intercept-url pattern="/users/**" access="ROLE_ADMIN"/>
+    <http use-expressions="true">
+        <intercept-url pattern="/users**" access="hasRole('ROLE_ADMIN')"/>
+        <intercept-url pattern="/users/**" access="hasRole('ROLE_ADMIN')"/>
         <form-login login-page="/login.html"/>
         <logout logout-url="/logout"/>
     </http>
