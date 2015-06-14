@@ -27,7 +27,7 @@
                                 JOIN user_role ON user.id = user_role.users_id
                                 JOIN role ON user_role.roles_id = role.id
                                 WHERE user.name = ?"
-                   users-by-username-query="SELECT name, password, 1 FROM user WHERE name = ?" />
+                   users-by-username-query="SELECT name, password, enabled FROM user WHERE name = ?" />
         </authentication-provider>
     </authentication-manager>
 
