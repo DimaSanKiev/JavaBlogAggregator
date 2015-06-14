@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import ua.burdyga.jba.entity.User;
 import ua.burdyga.jba.service.UserService;
 
+import java.security.Principal;
+
 @Controller
 public class UserController {
 
@@ -44,6 +46,13 @@ public class UserController {
     public String doRegister(@ModelAttribute("user") User user) {
         userService.save(user);
         return "redirect:/register.html?success=true";
+    }
+
+    @RequestMapping("/account")
+    public String account(Model model, Principal principal) {
+        String name = principal.getName();// this object is in user's session and it contains name of the user
+        model.addAttribute("user", userService.findOneWithBlogs(name));
+        return "user-detail";
     }
 
 }
