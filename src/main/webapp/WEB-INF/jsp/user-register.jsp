@@ -18,6 +18,7 @@
 
         <div class="col-sm-10">
             <form:input path="name" cssClass="form-control"/>
+            <form:errors path="name"/>
         </div>
     </div>
 
@@ -26,6 +27,7 @@
 
         <div class="col-sm-10">
             <form:input path="email" cssClass="form-control"/>
+            <form:errors path="email"/>
         </div>
     </div>
 
@@ -34,6 +36,7 @@
 
         <div class="col-sm-10">
             <form:password path="password" cssClass="form-control"/>
+            <form:errors path="password"/>
         </div>
     </div>
 
