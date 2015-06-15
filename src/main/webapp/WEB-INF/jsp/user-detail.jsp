@@ -5,7 +5,7 @@
   Time: 18:20
   To change this template use File | Settings | File Templates.
 --%>
-<%@ include file="../layout/taglib.jsp"%>
+<%@ include file="../layout/taglib.jsp" %>
 
 <h1>${user.name}</h1>
 
@@ -15,45 +15,46 @@
 </button>
 
 <form:form commandName="blog" cssClass="form-horizontal">
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">New blog</h4>
-            </div>
-            <div class="modal-body">
-                <div class="form-group">
-                    <label for="name" class="col-sm-2 control-label">Name:</label>
-
-                    <div class="col-sm-10">
-                        <form:input path="name" cssClass="form-control"/>
-                    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">New blog</h4>
                 </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="name" class="col-sm-2 control-label">Name:</label>
 
-                <div class="form-group">
-                    <label for="name" class="col-sm-2 control-label">URL:</label>
-
-                    <div class="col-sm-10">
-                        <form:input path="url" cssClass="form-control"/>
+                        <div class="col-sm-10">
+                            <form:input path="name" cssClass="form-control"/>
+                        </div>
                     </div>
-                </div>
 
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <input type="submit" class="btn btn-primary" value="Save"/>
+                    <div class="form-group">
+                        <label for="name" class="col-sm-2 control-label">URL:</label>
+
+                        <div class="col-sm-10">
+                            <form:input path="url" cssClass="form-control"/>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <input type="submit" class="btn btn-primary" value="Save"/>
+                </div>
             </div>
         </div>
     </div>
-</div>
 </form:form>
 
-<br /><br />
+<br/><br/>
 
 <script type="text/javascript">
-    $(document).ready(function() {
+    $(document).ready(function () {
         $('.nav-tabs a:first').tab('show'); // Select first tab
     });
 </script>
@@ -68,28 +69,31 @@
 
     <!-- Tab panes -->
     <div class="tab-content">
-    <c:forEach items="${user.blogs}" var="blog">
-        <div role="tabpanel" class="tab-pane" id="blog_${blog.id}">
-            <h1>${blog.name}</h1>
-            <p>${blog.url}</p>
+        <c:forEach items="${user.blogs}" var="blog">
+            <div role="tabpanel" class="tab-pane" id="blog_${blog.id}">
+                <h1>${blog.name}</h1>
 
-            <table class="table table-bordered table-hover table-striped">
-                <thead>
-                <tr>
-                    <th>Title</th>
-                    <th>Link</th>
-                </tr>
-                </thead>
-                <tbody>
-                <c:forEach items="${blog.items}" var="item">
+                <p>
+                    <a href="<spring:url value="/blog/remove/${blog.id}.html"/>" class="btn btn-danger">remove blog</a>
+                        ${blog.url}</p>
+
+                <table class="table table-bordered table-hover table-striped">
+                    <thead>
                     <tr>
-                        <td>${item.title}</td>
-                        <td>${item.link}</td>
+                        <th>Title</th>
+                        <th>Link</th>
                     </tr>
-                </c:forEach>
-                </tbody>
-            </table>
-        </div>
-    </c:forEach>
+                    </thead>
+                    <tbody>
+                    <c:forEach items="${blog.items}" var="item">
+                        <tr>
+                            <td>${item.title}</td>
+                            <td>${item.link}</td>
+                        </tr>
+                    </c:forEach>
+                    </tbody>
+                </table>
+            </div>
+        </c:forEach>
     </div>
 </div>
