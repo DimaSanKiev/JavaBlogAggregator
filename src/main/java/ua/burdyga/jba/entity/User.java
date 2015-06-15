@@ -1,6 +1,7 @@
 package ua.burdyga.jba.entity;
 
 import org.hibernate.validator.constraints.Email;
+import ua.burdyga.jba.annotation.UniqueUsername;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
@@ -14,6 +15,8 @@ public class User {
     private Integer id;
 
     @Size(min = 3, message = "Name must be at least 3 characters!")
+    @Column(unique = true)
+    @UniqueUsername(message = "Such username already exists!")
     private String name;
 
     @Size(min = 1, message = "Invalid email address!")
