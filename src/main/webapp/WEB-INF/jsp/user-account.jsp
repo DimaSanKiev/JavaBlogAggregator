@@ -12,7 +12,7 @@
     New blog
 </button>
 
-<form:form commandName="blog" cssClass="form-horizontal">
+<form:form commandName="blog" cssClass="form-horizontal blogForm">
     <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -56,11 +56,31 @@
 <script type="text/javascript">
     $(document).ready(function () {
         $('.nav-tabs a:first').tab('show'); // Select first tab
-        $(".triggerRemove").click(function(e) {
+        $(".triggerRemove").click(function (e) {
             e.preventDefault();
             $("#modalRemove .removeBtn").attr("href", $(this).attr("href"));
             $("#modalRemove").modal();
         });
+        $(".blogForm").validate(
+                {
+                    rules: {
+                        name: {
+                            required: true,
+                            minlength: 1
+                        },
+                        url: {
+                            required: true,
+                            url: true
+                        }
+                    },
+                    highlight: function (element) {
+                        $(element).closest('.form-group').removeClass('has-success').addClass('has-error');
+                    },
+                    unhighlight: function (element) {
+                        $(element).closest('.form-group').removeClass('has-error').addClass('has-success');
+                    }
+                }
+        );
     });
 </script>
 
@@ -68,7 +88,8 @@
     <!-- Nav tabs -->
     <ul class="nav nav-tabs" role="tablist">
         <c:forEach items="${user.blogs}" var="blog">
-            <li role="presentation"><a href="#blog_${blog.id}" aria-controls="blog" role="tab" data-toggle="tab">${blog.name}</a></li>
+            <li role="presentation"><a href="#blog_${blog.id}" aria-controls="blog" role="tab"
+                                       data-toggle="tab">${blog.name}</a></li>
         </c:forEach>
     </ul>
 
@@ -79,7 +100,8 @@
                 <h1>${blog.name}</h1>
 
                 <p>
-                    <a href="<spring:url value="/blog/remove/${blog.id}.html"/>" class="btn btn-danger triggerRemove">remove blog</a>
+                    <a href="<spring:url value="/blog/remove/${blog.id}.html"/>" class="btn btn-danger triggerRemove">remove
+                        blog</a>
                         ${blog.url}</p>
 
                 <table class="table table-bordered table-hover table-striped">
@@ -109,7 +131,8 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title" id="myModalLabel">Remove blog</h4>
             </div>
             <div class="modal-body">
