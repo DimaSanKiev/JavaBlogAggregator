@@ -28,7 +28,7 @@ public class AdminController {
         return "user-detail";
     }
 
-    @RequestMapping("/remove{id}")
+    @RequestMapping("/remove/{id}")
     public String removeUser(@PathVariable int id) {
         userService.delete(id);
         return "redirect:/users.html";
