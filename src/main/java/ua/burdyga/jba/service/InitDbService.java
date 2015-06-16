@@ -5,7 +5,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ua.burdyga.jba.entity.Blog;
-import ua.burdyga.jba.entity.Item;
 import ua.burdyga.jba.entity.Role;
 import ua.burdyga.jba.entity.User;
 import ua.burdyga.jba.repository.BlogRepository;
@@ -15,7 +14,6 @@ import ua.burdyga.jba.repository.UserRepository;
 
 import javax.annotation.PostConstruct;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 @Transactional
@@ -61,18 +59,18 @@ public class InitDbService {
         blogJavavids.setUser(userAdmin);
         blogRepository.save(blogJavavids);
 
-        Item item1 = new Item();
-        item1.setBlog(blogJavavids);
-        item1.setTitle("first");
-        item1.setLink("http://javavids.com");
-        item1.setPublishedDate(new Date());
-        itemRepository.save(item1);
-
-        Item item2 = new Item();
-        item2.setBlog(blogJavavids);
-        item2.setTitle("second");
-        item2.setLink("http://javavids.com");
-        item2.setPublishedDate(new Date());
-        itemRepository.save(item2);
+//        Item item1 = new Item();
+//        item1.setBlog(blogJavavids);
+//        item1.setTitle("first");
+//        item1.setLink("http://javavids.com");
+//        item1.setPublishedDate(new Date());
+//        itemRepository.save(item1);
+//
+//        Item item2 = new Item();
+//        item2.setBlog(blogJavavids);
+//        item2.setTitle("second");
+//        item2.setLink("http://javavids.com");
+//        item2.setPublishedDate(new Date());
+//        itemRepository.save(item2);
     }
 }
