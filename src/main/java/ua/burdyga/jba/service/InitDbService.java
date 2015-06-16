@@ -34,30 +34,50 @@ public class InitDbService {
 
     @PostConstruct
     public void init() {
-        Role roleUser = new Role();
-        roleUser.setName("ROLE_USER");
-        roleRepository.save(roleUser);
+        if (roleRepository.findByName("ROLE_ADMIN") == null) {
+            Role roleUser = new Role();
+            roleUser.setName("ROLE_USER");
+            roleRepository.save(roleUser);
 
-        Role roleAdmin = new Role();
-        roleAdmin.setName("ROLE_ADMIN");
-        roleRepository.save(roleAdmin);
+            Role roleAdmin = new Role();
+            roleAdmin.setName("ROLE_ADMIN");
+            roleRepository.save(roleAdmin);
 
-        User userAdmin = new User();
-        userAdmin.setEnabled(true);
-        userAdmin.setName("admin");
-        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-        userAdmin.setPassword(encoder.encode("admin"));
-        List<Role> roles = new ArrayList<Role>();
-        roles.add(roleAdmin);
-        roles.add(roleUser);
-        userAdmin.setRoles(roles);
-        userRepository.save(userAdmin);
+            User userAdmin = new User();
+            userAdmin.setEnabled(true);
+            userAdmin.setName("admin");
+            BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+            userAdmin.setPassword(encoder.encode("admin"));
+            List<Role> roles = new ArrayList<Role>();
+            roles.add(roleAdmin);
+            roles.add(roleUser);
+            userAdmin.setRoles(roles);
+            userRepository.save(userAdmin);
 
-        Blog blogJavavids = new Blog();
-        blogJavavids.setName("JavaVids");
-        blogJavavids.setUrl("http://feeds.feedburner.com/javavids?format=xml");
-        blogJavavids.setUser(userAdmin);
-        blogRepository.save(blogJavavids);
+            Blog blogJavavids = new Blog();
+            blogJavavids.setName("JavaVids");
+            blogJavavids.setUrl("http://feeds.feedburner.com/javavids?format=xml");
+            blogJavavids.setUser(userAdmin);
+            blogRepository.save(blogJavavids);
+
+            Blog blogTomcat = new Blog();
+            blogTomcat.setName("Tomcat");
+            blogTomcat.setUrl("http://www.tomcatexpert.com/blog/feed");
+            blogTomcat.setUser(userAdmin);
+            blogRepository.save(blogTomcat);
+
+            Blog blogJavaWorldCore = new Blog();
+            blogJavaWorldCore.setName("JavaWorldCore");
+            blogJavaWorldCore.setUrl("http://www.javaworld.com/category/core-java/index.rss");
+            blogJavaWorldCore.setUser(userAdmin);
+            blogRepository.save(blogJavaWorldCore);
+
+            Blog blogEclipseSource = new Blog();
+            blogEclipseSource.setName("EclipseSource");
+            blogEclipseSource.setUrl("http://eclipsesource.com/blogs/category/syndicate/feed/?author_name=jkrause");
+            blogEclipseSource.setUser(userAdmin);
+            blogRepository.save(blogEclipseSource);
+
 
 //        Item item1 = new Item();
 //        item1.setBlog(blogJavavids);
@@ -72,5 +92,6 @@ public class InitDbService {
 //        item2.setLink("http://javavids.com");
 //        item2.setPublishedDate(new Date());
 //        itemRepository.save(item2);
+        }
     }
 }
