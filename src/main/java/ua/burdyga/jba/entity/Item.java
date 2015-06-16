@@ -12,6 +12,7 @@ public class Item {
 
     private String title;
 
+    @Column(length = Integer.MAX_VALUE)
     private String description;
 
     @Column(name = "published_date")
