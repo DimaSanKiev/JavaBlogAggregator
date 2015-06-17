@@ -66,19 +66,6 @@ public class InitDbService {
             blogTomcat.setUser(userAdmin);
             blogRepository.save(blogTomcat);
 
-            Blog blogJavaWorldCore = new Blog();
-            blogJavaWorldCore.setName("JavaWorldCore");
-            blogJavaWorldCore.setUrl("http://www.javaworld.com/category/core-java/index.rss");
-            blogJavaWorldCore.setUser(userAdmin);
-            blogRepository.save(blogJavaWorldCore);
-
-            Blog blogEclipseSource = new Blog();
-            blogEclipseSource.setName("EclipseSource");
-            blogEclipseSource.setUrl("http://eclipsesource.com/blogs/category/syndicate/feed/?author_name=jkrause");
-            blogEclipseSource.setUser(userAdmin);
-            blogRepository.save(blogEclipseSource);
-
-
 //        Item item1 = new Item();
 //        item1.setBlog(blogJavavids);
 //        item1.setTitle("first");
