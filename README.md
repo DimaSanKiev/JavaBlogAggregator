@@ -1,4 +1,4 @@
-JavaBlogAggregator
+<h2>JavaBlogAggregator</h2>
 
 Overview
 This application can download feeds from specified URLs and store them inside database.
