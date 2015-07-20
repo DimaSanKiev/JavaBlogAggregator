@@ -6,5 +6,5 @@ Anyone can register. jQuery is used for client-side validation. After registrati
 Administrator can see all users, their blogs and can remove users and their blogs.
 
 <h4>Technologies used</h4>
-Spring, Hibernate (basic framework, Spring Data JPS, Spring Security), Twitter Bootsrap, jQuery, Apache Tiles, JSP.<br>
-Jetty server is used for testing.
+<b>Hibernate</b>, <b>Spring</b> (basic framework, <b>Spring Data JPS</b>, <b>Spring Security</b>), <b>Twitter Bootsrap</b>, <b>jQuery</b>, <b>Apache Tiles</b>, <b>JSP</b>.<br>
+<b>Jetty</b> server is used for testing.
