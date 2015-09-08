@@ -50,7 +50,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" style="padding: 0px 0px 0px 10px;" href="<spring:url value="/"/>">
-                    <span><img src="https://lh3.googleusercontent.com/HB3N0fIZloefE4u3XzrYFGVwHnP4BxIAK9EHBq5Ti02G3Bhh8P5fUJYMJc-y_iYbQRXg0bKDRFNdEcY=w1890-h915" alt="logo">
+                    <span><img src="https://raw.githubusercontent.com/DimaSanKiev/JavaBlogAggregator/master/src/main/webapp/icon/logo.png" alt="logo">
                     <span style="position:relative; top:9px; padding: 0px 10px 0px 10px;">JBA</span>
                     </span>
                 </a>
