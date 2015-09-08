@@ -8,3 +8,12 @@ Administrator can see all users, their blogs and can remove users and their blog
 <h4>Technologies used</h4>
 <b>Hibernate</b>, <b>Spring</b> (basic framework, <b>Spring Data JPS</b>, <b>Spring Security</b>), <b>Twitter Bootsrap</b>, <b>jQuery</b>, <b>Apache Tiles</b>, <b>JSP</b>.<br>
 <b>Jetty</b> server is used for testing.
+
+To see the full size image press it and select "Raw".
+![Screenshot_1](icon/Untitled-1.png)
+
+![Screenshot_2](icon/Untitled-2.png)
+
+![Screenshot_3](icon/Untitled-3.png)
+
+![Screenshot_3](icon/Untitled-4.png)
