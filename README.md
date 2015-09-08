@@ -10,10 +10,11 @@ Administrator can see all users, their blogs and can remove users and their blog
 <b>Jetty</b> server is used for testing.
 
 To see the full size image press it and select "Raw".
-![Screenshot_1](icon/Untitled-1.png)
 
-![Screenshot_2](icon/Untitled-2.png)
+![Screenshot_1](/src/main/webapp/icon/Untitled-1.png)
 
-![Screenshot_3](icon/Untitled-3.png)
+![Screenshot_2](/src/main/webapp/icon/Untitled-2.png)
 
-![Screenshot_3](icon/Untitled-4.png)
+![Screenshot_3](/src/main/webapp/icon/Untitled-3.png)
+
+![Screenshot_3](/src/main/webapp/icon/Untitled-4.png)
