@@ -18,3 +18,5 @@ To see the full size image press it and select "Raw".
 ![Screenshot_3](/src/main/webapp/icon/Untitled-3.png)
 
 ![Screenshot_3](/src/main/webapp/icon/Untitled-4.png)
+
+Use login "admin" and password "admin" to login as administrator.
